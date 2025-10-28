@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pablo Leyton Duque | Portafolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <button id="toggle-theme" aria-label="Cambiar tema">🌙</button>
+
+  <div class="wrap" id="main">
+    <header>
+      <div class="hero">
+        <div>
+          <h1 class="title">Hola — soy Pablo Leyton Duque</h1>
+          <p class="lead">Estudiante de Tecnología en Desarrollo de Software. Creo sitios web y soluciones con buen UX y código limpio.</p>
+          <div class="cta">
+            <a class="btn" href="#contacto">Contáctame</a>
+            <a class="btn secondary" href="#proyectos">Ver proyectos</a>
+            <a class="btn download" href="https://drive.google.com/file/d/1W-rSDTdloxCcABG0wTe36qUNq3poBPRc/view?usp=drive_link" target="_blank" rel="noopener"><i class="far fa-file-pdf"></i> Ver hoja de vida</a>
+          </div>
+        </div>
+        <div class="hero-illustration">
+          <img src="images/hero-decorative.png" alt="Ilustración decorativa: persona trabajando" loading="eager">
+        </div>
+      </div>
+    </header>
+
+    <nav role="navigation" aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#herramientas">Herramientas</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <section id="sobre-mi">
+      <h2>¿Quién soy yo?</h2>
+      <div class="about">
+        <img class="profile-img" src="images/profile.jpg" alt="Foto de Pablo Leyton Duque">
+        <div class="bio">
+          <p>
+            Soy estudiante de Tecnología en Desarrollo de Software apasionado por la creación de soluciones tecnológicas eficientes y elegantes.
+            Me gusta aprender nuevas herramientas, trabajar en equipo y enfrentar retos que fortalezcan mis habilidades en desarrollo web y programación.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="herramientas">
+      <h2>¿Qué herramientas uso?</h2>
+      <div class="tools">
+        <span class="tool">Python</span>
+        <span class="tool">Git</span>
+        <span class="tool">HTML</span>
+        <span class="tool">CSS</span>
+        <span class="tool">JavaScript</span>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <div class="projects-grid">
+        <article class="project-card" aria-labelledby="p-jende">
+          <img src="images/jende.png" alt="Captura del proyecto Jende">
+          <div class="meta">
+            <h4 id="p-jende">Jende — Sistema de gestión de inventario</h4>
+            <p>Aplicación web diseñada para optimizar el control de inventarios, facilitando el registro, seguimiento y actualización de productos. Desarrollada con HTML, CSS y JavaScript.</p>
+            <div class="project-actions">
+              <a class="code" href="https://github.com/Pablito7sis/Jende" target="_blank" rel="noopener">Ver repositorio</a>
+            </div>
+          </div>
+        </article>
+        <!-- Añade más .project-card aquí -->
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contáctame</h2>
+      <p>Puedes encontrarme en las siguientes plataformas o escribirme directamente:</p>
+      <div class="social">
+        <a href="https://github.com/Pablito7sis" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.instagram.com/pabloleytonduque/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://x.com/PabloLeytonDuq2" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i>  (Twitter)</a>
+      </div>
+      <div style="margin-top:20px;">
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Pablo Leyton Duque — Portafolio personal</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("toggle-theme");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const isDark = document.body.classList.contains("dark");
+      toggleBtn.textContent = isDark ? "🌞" : "🌙";
+      try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e){}
+    });
+
+    (function(){
+      try {
+        const theme = localStorage.getItem('theme');
+        if(theme === 'dark') { document.body.classList.add('dark'); toggleBtn.textContent = '🌞'; }
+      } catch(e){}
+    })();
+  </script>
+</body>
+</html>
